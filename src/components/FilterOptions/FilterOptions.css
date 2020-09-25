@@ -1,0 +1,9 @@
+.FilterOptions {
+    background-color: lightgrey;
+    color: black;
+    padding: 5px 0px;
+}
+
+.FilterOptions select {
+    margin-right: 10px;
+}

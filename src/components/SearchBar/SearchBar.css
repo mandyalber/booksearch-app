@@ -1,0 +1,9 @@
+.SearchBar {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.SearchBar h1 {
+    padding: 30px 0px;
+}
