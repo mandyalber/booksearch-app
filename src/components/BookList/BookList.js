@@ -7,17 +7,14 @@ export default class BookList extends React.Component {
 
 
     render() {
-      /*  const { searchTerm, filterOptionPrint, filterOptionType } = this.props;
-        const list = this.props.files
-        .filter(file => file.name.includes(searchTerm) 
-              && (filterOptionPrint === 'All' || file.status === filterOptionPrint))
-        
-            .map((book, key) => <BookItem {...book} key={key} />);*/
+        //const { filterOptionPrint, filterOptionType } = this.props;
+        const list = this.props.books
+            .map((book, key) => <BookItem {...book} key={key} />);
         return (
             <div className="BookList">
-                test
+                {list}
             </div>
         )
-        
+
     }
 }

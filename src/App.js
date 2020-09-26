@@ -13,23 +13,18 @@ class App extends React.Component {
       filterOptionType: ''
     };
   }
-  
-  state = {
-    books: []
-}
 
-  //format params
+handleSearchSubmit(event){ 
+  event.preventDefault()
+  this.getBooks(this.state.searchTerm)
+}
+  //format params for API call
 formatQueryParams(params) {
 const queryItems = Object.keys(params)
   .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
 return queryItems.join('&');
 }
 
-handleSearchSubmit(event){ 
-  event.preventDefault()
-  this.getBooks(this.state.searchTerm)
-}
-//function for api call (pass params)
 getBooks(term) {
 const params = {
   q: term,
@@ -61,8 +56,6 @@ fetch(url)
       error: err.message
     });
     console.log(this.state.error)})
-  
-//set state of books to response data
 }
 
   //handler(s)
@@ -95,6 +88,7 @@ fetch(url)
           handleUpdateType={type => this.handleUpdateType(type)}
         />
         <BookList 
+          books={this.state.books}
           printTypeFilter={this.state.filterOptionPrint} 
           bookTypeFilter={this.state.filterOptionType} 
         />

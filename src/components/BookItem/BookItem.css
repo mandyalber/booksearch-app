@@ -1,0 +1,13 @@
+.ListItem img {
+    float: left;
+    padding-right: 30px;
+}
+
+.ListItem {
+   
+    margin: 100px;
+}
+
+.ListeItem__content {
+    text-align: center;
+}
