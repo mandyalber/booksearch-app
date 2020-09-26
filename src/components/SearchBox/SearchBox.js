@@ -5,15 +5,18 @@ import './SearchBox.css'
 export default function SearchBox(props) {
 
     return (
-        <div className="SearchBox">
+        <form className="SearchBox" onSubmit={(e) => {props.handleSearchSubmit(e)}}>
             <label htmlFor="search__term">Search: </label>
             <input
                 type="text" id="search__term"
                 placeholder="Search term"
+                required
                 value={props.searchTerm}
                 onChange={e => props.handleUpdateSearchTerm(e.target.value)}
             />
-            <button className="search__button">Search</button>
-        </div>
+            <button
+                className="search__button"                
+            >Search</button>
+        </form>
     )
 }

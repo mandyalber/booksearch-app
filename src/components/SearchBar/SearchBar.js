@@ -14,7 +14,8 @@ export default class SearchBar extends React.Component {
                 <div className="SearchBar__controls">
                     <SearchBox
                         searchTerm={this.props.searchTerm}
-                        handleUpdateSearchTerm={this.props.handleUpdateSearchTerm}                        
+                        handleUpdateSearchTerm={this.props.handleUpdateSearchTerm}
+                        handleSearchSubmit={this.props.handleSearchSubmit}                        
                     />                    
                     <FilterOptions 
                         handleUpdatePrint={this.props.handleUpdatePrint}
