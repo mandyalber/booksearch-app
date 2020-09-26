@@ -9,8 +9,8 @@ class App extends React.Component {
     this.state = {
       books: [],
       searchTerm: '',
-      filterOptionPrint: 'All',
-      filterOptionType: 'No filter'
+      filterOptionPrint: '',
+      filterOptionType: ''
     };
   }
 
@@ -21,6 +21,18 @@ class App extends React.Component {
       searchTerm: term
     })
   }
+  handleUpdatePrint(print) {
+    this.setState({
+      filterOptionPrint: print
+    })
+  }
+  handleUpdateType(type) {
+    this.setState({
+      filterOptionType: type
+    })
+  }
+
+
  
   render() {
     return (
@@ -28,6 +40,10 @@ class App extends React.Component {
         <SearchBar 
           searchTerm={this.state.searchTerm} 
           handleUpdateSearchTerm={term=>this.handleUpdateSearchTerm(term)}
+          filterOptionPrint={this.state.filterOptionPrint}
+          filterOptionType={this.state.filterOptionType}
+          handleUpdatePrint={print=>this.handleUpdatePrint(print)}
+          handleUpdateType={type=>this.handleUpdateType(type)}
         />
         <BookList books={this.props.books} />
       </div>
