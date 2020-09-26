@@ -12,7 +12,10 @@ export default class SearchBar extends React.Component {
                     <h1>Google Book Search</h1>
                 </div>
                 <div className="SearchBar__controls">
-                    <SearchBox />
+                    <SearchBox 
+                        searchTerm={this.props.searchTerm} 
+                        handleUpdateSearchTerm={this.props.handleUpdateSearchTerm}
+                    />
                     <FilterOptions/>
                 </div>
             </div>

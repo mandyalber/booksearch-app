@@ -9,10 +9,14 @@ export default class SearchBox extends React.Component {
                 <label htmlFor="search__term">Search: </label>
                 <input 
                     type="text" id="search__term" 
-                    placeholder="Search term"                     
+                    placeholder="Search term"
+                    value={this.props.searchTerm}
+                    onChange={e => this.props.handleUpdateSearchTerm(e.target.value)}
                 />
                 <button 
-                    className="search__button">Search</button>
+                    className="search__button"
+                    
+                >Search</button>
             </div>
 
         )

@@ -16,11 +16,19 @@ class App extends React.Component {
 
   //componentDidMount(){api call}
   //handler(s)
-
+  handleUpdateSearchTerm(term) {
+    this.setState({
+      searchTerm: term
+    })
+  }
+ 
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar 
+          searchTerm={this.state.searchTerm} 
+          handleUpdateSearchTerm={term=>this.handleUpdateSearchTerm(term)}
+        />
         <BookList books={this.props.books} />
       </div>
     );
