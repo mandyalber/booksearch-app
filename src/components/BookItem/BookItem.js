@@ -3,7 +3,7 @@ import './BookItem.css'
 
 //Displays a single book's details 
 export default function BookItem(props) {
-    console.log(props.saleInfo.listPrice)
+
     let price = 0
     if(props.saleInfo.listPrice){
         price = props.saleInfo.listPrice.amount;
@@ -12,10 +12,15 @@ export default function BookItem(props) {
     if(props.searchInfo){
         text = props.searchInfo.textSnippet;
     }
+    
+    let imgSrc = ''
+    if(props.volumeInfo.imageLinks){
+        imgSrc = props.volumeInfo.imageLinks.thumbnail;
+    }
 
     return (
         <div className="ListItem">
-            <img src={props.volumeInfo.imageLinks.thumbnail} />
+            <img src={imgSrc} alt=""/>
             <div className="ListItem__content">               
                 <h2 className="ListItem__title">{props.volumeInfo.title}</h2>
                 <div className="ListItem__author">Author: {props.volumeInfo.authors}</div>
