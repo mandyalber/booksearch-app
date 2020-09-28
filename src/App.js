@@ -79,18 +79,14 @@ fetch(url)
     return (
       <div className="App">
         <SearchBar
-          searchTerm={this.state.searchTerm}
+          data={this.state}
           handleUpdateSearchTerm={term => this.handleUpdateSearchTerm(term)}
           handleSearchSubmit={event => this.handleSearchSubmit(event)}
-          filterOptionPrint={this.state.filterOptionPrint}
-          filterOptionType={this.state.filterOptionType}
           handleUpdatePrint={print => this.handleUpdatePrint(print)}
           handleUpdateType={type => this.handleUpdateType(type)}
         />
         <BookList 
-          books={this.state.books}
-          printTypeFilter={this.state.filterOptionPrint} 
-          bookTypeFilter={this.state.filterOptionType} 
+          data={this.state}
         />
       </div>
     );
